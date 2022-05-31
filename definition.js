@@ -11,9 +11,7 @@ Blockly.Blocks["ds1307_showtime"] = {
       helpUrl: ''
     });
   },
-  getDeveloperVars: function() {
-    return ['ds1307'];
-  }
+  
 };
 
 Blockly.Python["ds1307_showtime"] = function(block) {
