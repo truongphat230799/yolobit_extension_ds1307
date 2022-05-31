@@ -22,7 +22,7 @@ Blockly.Python["ds1307_showtime"] = function(block) {
   Blockly.Python.definitions_["import_ds1307"] = "from ds1307 import DS1307";
   Blockly.Python.definitions_["import_create_ds1307"] = "ds1307 = DS1307(SoftI2C(scl=Pin(22), sda=Pin(21)))";
   var code = "ds1307.datetime()\n";
-  return code;
+  return [code, Blockly.Python.ORDER_NONE];
 };
 
 
@@ -104,7 +104,7 @@ Blockly.Python["ds1307_settime"] = function (block) {
   var second = Blockly.Python.valueToCode(block, 'SECOND', Blockly.Python.ORDER_ATOMIC);
   
     // TODO: Assemble Python into code variable.
-  var code = "now = (" + year + ", " + month + "," + date + "," + weekday + "," + hour + "," + minute + "," + second +")\n";
+  var code = "now = (" + year + ", " + month + "," + date + "," + weekday + "," + hour + "," + minute + "," + second +")\n + ds.datetime(now)";
   return code;
 };
 
@@ -141,7 +141,6 @@ Blockly.Python["ds1307_gettime"] = function(block) {
   Blockly.Python.definitions_['import_i2c'] = 'from machine import Pin, SoftI2C';
   Blockly.Python.definitions_["import_ds1307"] = "from ds1307 import DS1307";
   Blockly.Python.definitions_["import_create_ds1307"] = "ds1307 = DS1307(SoftI2C(scl=Pin(22), sda=Pin(21)))";
-  
   var code = "";
   if (dropdown_data == "YEAR")
     code = "gettime[0]\n";
