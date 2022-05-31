@@ -153,7 +153,7 @@ Blockly.Python["homebit3_dht_read"] = function(block) {
   else if (dropdown_data == " MINUTE")
     code = "gettime[5]\n";
   else if (dropdown_data == "SECOND")
-    code = "gettime[6]\n"
+    code = "gettime[6]\n";
   // TODO: Change ORDER_NONE to the correct strength.
   return [code, Blockly.Python.ORDER_NONE];
 };
