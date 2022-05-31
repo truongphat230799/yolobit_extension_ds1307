@@ -17,7 +17,7 @@ Blockly.Python["ds1307_showtime"] = function(block) {
   Blockly.Python.definitions_["import_ds1307"] = "from ds1307 import DS1307";
   Blockly.Python.definitions_["import_create_ds1307"] = "ds1307 = DS1307(SoftI2C(scl=Pin(22), sda=Pin(21)))";
   var code = "ds1307.datetime()\n";
-  return code;
+  return [code, Blockly.Python.ORDER_NONE];
 };
 
 
