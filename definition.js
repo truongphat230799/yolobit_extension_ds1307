@@ -1,16 +1,13 @@
 Blockly.Blocks["ds1307_showtime"] = {
   init: function() {
     this.jsonInit({
-      message0: "lấy giá trị thời gian từ cảm biến",
+      message0: Blockly.Msg.BLOCK_DS1307_SHOWTIME_MESSAGE0,
       args0: [
       ],
       colour: "#CFF600",
       tooltip: '',
       helpUrl: ''
     });
-  },
-  getDeveloperVars: function() {
-    return ['ds1307'];
   }
 };
 
@@ -131,7 +128,7 @@ Blockly.Blocks["ds1307_gettime"] = {
   }
 };
 
-Blockly.Python["homebit3_dht_read"] = function(block) {
+Blockly.Python["ds1307_gettime"] = function(block) {
   var dropdown_data = block.getFieldValue("DATA");
   // TODO: Assemble Python into code variable.
   Blockly.Python.definitions_['import_i2c'] = 'from machine import Pin, SoftI2C';
