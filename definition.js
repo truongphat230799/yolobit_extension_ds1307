@@ -1,7 +1,7 @@
 Blockly.Blocks["ds1307_showtime"] = {
   init: function() {
     this.jsonInit({
-      message0: Blockly.Msg.BLOCK_HOMEBIT3_DHT_MEANSURE_MESSAGE0,
+      message0: "lấy giá trị thời gian từ cảm biến",
       args0: [
       ],
       previousStatement: null,
@@ -141,7 +141,6 @@ Blockly.Python["homebit3_dht_read"] = function(block) {
   Blockly.Python.definitions_['import_i2c'] = 'from machine import Pin, SoftI2C';
   Blockly.Python.definitions_["import_ds1307"] = "from ds1307 import DS1307";
   Blockly.Python.definitions_["import_create_ds1307"] = "ds1307 = DS1307(SoftI2C(scl=Pin(22), sda=Pin(21)))";
-  Blockly.Python.definitions_["import_ds1307_settime"] = "gettime = ds.datetime()";
   var code = "";
   if (dropdown_data == "YEAR")
     code = "gettime[0]\n";
