@@ -5,8 +5,7 @@ Blockly.Blocks["ds1307_showtime"] = {
       args0: [
       ],
       colour: "#CFF600",
-      tooltip: '',
-      helpUrl: ''
+      output: null
     });
   }
 };
