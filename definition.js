@@ -1,7 +1,7 @@
 Blockly.Blocks["ds1307_showtime"] = {
   init: function() {
     this.jsonInit({
-      message0: "lấy giá trị thời gian từ cảm biến",
+      "message": "lấy giá trị thời gian từ cảm biến",
       args0: [
       ],
       colour: "#CFF600",
