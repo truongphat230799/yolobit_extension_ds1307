@@ -15,7 +15,7 @@ Blockly.Python["ds1307_showtime"] = function(block) {
   Blockly.Python.definitions_['import_i2c'] = 'from machine import Pin, SoftI2C';
   Blockly.Python.definitions_["import_ds1307"] = "from ds1307 import DS1307";
   Blockly.Python.definitions_["import_create_ds1307"] = "ds1307 = DS1307(SoftI2C(scl=Pin(22), sda=Pin(21)))";
-  var code = "ds1307.datetime()\n";
+  var code = "ds1307.datetime()\n" + "gettime = ds1307.datetime\n";
   return [code, Blockly.Python.ORDER_NONE];
 };
 
@@ -133,21 +133,21 @@ Blockly.Python["ds1307_gettime"] = function(block) {
   Blockly.Python.definitions_['import_i2c'] = 'from machine import Pin, SoftI2C';
   Blockly.Python.definitions_["import_ds1307"] = "from ds1307 import DS1307";
   Blockly.Python.definitions_["import_create_ds1307"] = "ds1307 = DS1307(SoftI2C(scl=Pin(22), sda=Pin(21)))";
-  var code = "gettime = ds.datetime()\n" + x;
+  var code = "";
   if (dropdown_data == "YEAR")
-    x = "gettime[0]\n";
+    code = "gettime[0]\n";
   else if (dropdown_data == "MONTH")
-    x = "gettime[1]\n";
+    code = "gettime[1]\n";
   else if (dropdown_data == "DATE")
-    x = "gettime[2]\n"; 
+    code = "gettime[2]\n"; 
   else if (dropdown_data == "WEEKDAY")
-    x = "gettime[3]\n";
+    code = "gettime[3]\n";
   else if (dropdown_data == "HOUR")
-    x =  "gettime[4]\n";
+    code =  "gettime[4]\n";
   else if (dropdown_data == " MINUTE")
-    x = "gettime[5]\n";
+    code = "gettime[5]\n";
   else if (dropdown_data == "SECOND")
-    x = "gettime[6]\n";
+    code = "gettime[6]\n";
   // TODO: Change ORDER_NONE to the correct strength.
   return [code, Blockly.Python.ORDER_NONE];
 };
