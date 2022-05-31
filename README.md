@@ -1,1 +1,1 @@
-Yolo:Bit extension for Home:Bit V3 Kit
+Yolo:Bit extension for DS1307
