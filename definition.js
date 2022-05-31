@@ -136,19 +136,19 @@ Blockly.Python["ds1307_gettime"] = function(block) {
   var x = "gettime = ds1307.datetime()";
   var code = "";
   if (dropdown_data == "YEAR")
-    code = x + "gettime[0]\n";
+    code = "gettime[0]\n";
   else if (dropdown_data == "MONTH")
-    code = x + "gettime[1]\n";
+    code =  "gettime[1]\n";
   else if (dropdown_data == "DATE")
-    code = x + "gettime[2]\n"; 
+    code =  "gettime[2]\n"; 
   else if (dropdown_data == "WEEKDAY")
-    code = x + "gettime[3]\n";
+    code = "gettime[3]\n";
   else if (dropdown_data == "HOUR")
-    code = x + "gettime[4]\n";
+    code = "gettime[4]\n";
   else if (dropdown_data == " MINUTE")
-    code = x + "gettime[5]\n";
+    code = "gettime[5]\n";
   else if (dropdown_data == "SECOND")
-    code = x + "gettime[6]\n";
+    code = "gettime[6]\n";
   // TODO: Change ORDER_NONE to the correct strength.
   return [code, Blockly.Python.ORDER_NONE];
 };
