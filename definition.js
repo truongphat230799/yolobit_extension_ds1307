@@ -1,7 +1,7 @@
 Blockly.Blocks["ds1307_showtime"] = {
   init: function() {
     this.jsonInit({
-      message0: "hiển thị thời gian từ cảm biến",
+      message0: Blockly.Msg.BLOCK_HOMEBIT3_DHT_MEANSURE_MESSAGE0,
       args0: [
       ],
       previousStatement: null,
@@ -22,7 +22,7 @@ Blockly.Python["ds1307_showtime"] = function(block) {
   Blockly.Python.definitions_["import_ds1307"] = "from ds1307 import DS1307";
   Blockly.Python.definitions_["import_create_ds1307"] = "ds1307 = DS1307(SoftI2C(scl=Pin(22), sda=Pin(21)))";
   var code = "ds1307.datetime()\n";
-  return [code, Blockly.Python.ORDER_NONE];
+  return code;
 };
 
 
@@ -104,14 +104,14 @@ Blockly.Python["ds1307_settime"] = function (block) {
   var second = Blockly.Python.valueToCode(block, 'SECOND', Blockly.Python.ORDER_ATOMIC);
   
     // TODO: Assemble Python into code variable.
-  var code = "now = (" + year + ", " + month + "," + date + "," + weekday + "," + hour + "," + minute + "," + second +")\n + ds.datetime(now)";
+  var code = "now = (" + year + ", " + month + "," + date + "," + weekday + "," + hour + "," + minute + "," + second +")\n";
   return code;
 };
 
 Blockly.Blocks["ds1307_gettime"] = {
   init: function() {
     this.jsonInit({
-      message0: Msg.BLOCK_DS1307_GETTIME_MESSAGE0,
+      message0: Blockly.Msg.BLOCK_DS1307_GETTIME_MESSAGE0,
       args0: [
         {
           type: "field_dropdown",
@@ -135,12 +135,13 @@ Blockly.Blocks["ds1307_gettime"] = {
   }
 };
 
-Blockly.Python["ds1307_gettime"] = function(block) {
+Blockly.Python["homebit3_dht_read"] = function(block) {
   var dropdown_data = block.getFieldValue("DATA");
   // TODO: Assemble Python into code variable.
   Blockly.Python.definitions_['import_i2c'] = 'from machine import Pin, SoftI2C';
   Blockly.Python.definitions_["import_ds1307"] = "from ds1307 import DS1307";
   Blockly.Python.definitions_["import_create_ds1307"] = "ds1307 = DS1307(SoftI2C(scl=Pin(22), sda=Pin(21)))";
+  Blockly.Python.definitions_["import_ds1307_settime"] = "gettime = ds.datetime()";
   var code = "";
   if (dropdown_data == "YEAR")
     code = "gettime[0]\n";
