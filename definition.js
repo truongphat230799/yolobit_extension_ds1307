@@ -111,7 +111,7 @@ Blockly.Python["ds1307_settime"] = function (block) {
 Blockly.Blocks["ds1307_gettime"] = {
   init: function() {
     this.jsonInit({
-      message0: " lấy giá trị %1 từ cảm biến",
+      message0: Msg.BLOCK_DS1307_GETTIME_MESSAGE0,
       args0: [
         {
           type: "field_dropdown",
