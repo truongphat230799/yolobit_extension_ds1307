@@ -139,15 +139,15 @@ Blockly.Python["ds1307_gettime"] = function(block) {
   else if (dropdown_data == "MONTH")
     code =  "ds1307.datetime()[1]\n";
   else if (dropdown_data == "DATE")
-    code =  "ds1307.datetime[2]\n"; 
+    code =  "ds1307.datetime()[2]\n"; 
   else if (dropdown_data == "WEEKDAY")
-    code = "ds1307.datetime[3]\n";
+    code = "ds1307.datetime()[3]\n";
   else if (dropdown_data == "HOUR")
-    code = "ds1307.datetime[4]\n";
+    code = "ds1307.datetime()[4]\n";
   else if (dropdown_data == " MINUTE")
-    code = "ds1307.datetime[5]\n";
+    code = "ds1307.datetime()[5]\n";
   else if (dropdown_data == "SECOND")
-    code = "ds1307.datetime[6]\n";
+    code = "ds1307.datetime()[6]\n";
   // TODO: Change ORDER_NONE to the correct strength.
   return [code, Blockly.Python.ORDER_NONE];
 };
