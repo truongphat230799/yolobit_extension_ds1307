@@ -127,7 +127,7 @@ Blockly.Blocks["ds1307_gettime"] = {
   }
 };
 
-Blockly.Python["homebit3_dht_read"] = function(block) {
+Blockly.Python["ds1307_gettime"] = function(block) {
   var dropdown_data = block.getFieldValue("DATA");
   // TODO: Assemble Python into code variable.
   Blockly.Python.definitions_['import_i2c'] = 'from machine import Pin, SoftI2C';
