@@ -144,7 +144,7 @@ Blockly.Python["ds1307_gettime"] = function(block) {
     code = "ds1307.datetime()[3]\n";
   else if (dropdown_data == "HOUR")
     code =  "ds1307.datetime()[4]\n";
-  else if (dropdown_data == " MINUTE")
+  else if (dropdown_data == "MINUTE")
     code = "ds1307.datetime()[5]\n";
   else if (dropdown_data == "SECOND")
     code = "ds1307.datetime()[6]\n";
