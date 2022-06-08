@@ -118,7 +118,7 @@ Blockly.Python["ds1307_gettime"] = function(block) {
   else if (dropdown_data == "NGÀY")
     code = "ds1307.datetime()[2]\n"; 
   else if (dropdown_data == "TẤT CẢ")
-    code = "''.join([str(x) for x in ["{0:0>2}".format(ds1307.datetime()[2]), '/', "{0:0>2}".format(ds1307.datetime()[1]), '/', "{0:0>2}".format(ds1307.datetime()[0])]])";
+    code = "''.join([str(x) for x in [ds1307.datetime()[2], '/', "ds1307.datetime()[1], '/', "ds1307.datetime()[0]]])";
   else if (dropdown_data == "GIỜ")
     code =  "ds1307.datetime()[4]\n";
   else if (dropdown_data == "PHÚT")
