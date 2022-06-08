@@ -1,39 +1,39 @@
 <xml xmlns="https://developers.google.com/blockly/xml" id="toolbox" style="display: none">
   <category name="DS1307" colour="#006600" icon="clock">
     <block type="ds1307_settime">
-      <value name="year">
+      <value name="YEAR">
         <shadow type="math_number">
-          <field name="YEAR">0</field>
+          <field name="NUM">0</field>
         </shadow>
       </value>
-      <value name="month">
+      <value name="MONTH">
         <shadow type="math_number">
           <field name="MONTH">0</field>
         </shadow>
       </value>
-      <value name="date">
+      <value name="DATE">
         <shadow type="math_number">
-          <field name="DATE">0</field>
+          <field name="NUM">0</field>
         </shadow>
       </value>
-      <value name="weekday">
+      <value name="WEEKDAY">
         <shadow type="math_number">
-          <field name="WEEKDAY">0</field>
+          <field name="NUM">0</field>
         </shadow>
       </value>
-      <value name="hour">
+      <value name="HOUR">
         <shadow type="math_number">
-          <field name="HOUR">0</field>
+          <field name="NUM">0</field>
         </shadow>
       </value>
-      <value name="minute">
+      <value name="MINUTE">
         <shadow type="math_number">
-          <field name="MINUTE">0</field>
+          <field name="NUM">0</field>
         </shadow>
       </value>
-      <value name="second">
+      <value name="SECOND">
         <shadow type="math_number">
-          <field name="SECOND">0</field>
+          <field name="NUM">0</field>
         </shadow>
       </value>
     </block>
