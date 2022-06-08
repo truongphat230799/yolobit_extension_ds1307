@@ -70,12 +70,13 @@ Blockly.Python["ds1307_settime"] = function (block) {
   var year = Blockly.Python.valueToCode(block, 'YEAR', Blockly.Python.ORDER_ATOMIC);
   var month = Blockly.Python.valueToCode(block, 'MONTH', Blockly.Python.ORDER_ATOMIC);
   var date = Blockly.Python.valueToCode(block, 'DATE', Blockly.Python.ORDER_ATOMIC);
+  var weekday = Blockly.Python.valueToCode(block, 'WEEKDAY', Blockly.Python.ORDER_ATOMIC);
   var hour = Blockly.Python.valueToCode(block, 'HOUR', Blockly.Python.ORDER_ATOMIC);
   var minute = Blockly.Python.valueToCode(block, 'MINUTE', Blockly.Python.ORDER_ATOMIC);
   var second = Blockly.Python.valueToCode(block, 'SECOND', Blockly.Python.ORDER_ATOMIC);
   
     // TODO: Assemble Python into code variable.
-  var code = "now = (" + year + "," + month + "," + date + "," + "0" + "," + hour + "," + minute + "," + second +")\n" + "ds1307.datetime(now)\n";
+  var code = "now = (" + year + "," + month + "," + date + "," + "" + "," + hour + "," + minute + "," + second +")\n" + "ds1307.datetime(now)\n";
   return code;
 };
 
@@ -118,7 +119,7 @@ Blockly.Python["ds1307_gettime"] = function(block) {
   else if (dropdown_data == "NGÀY")
     code = "ds1307.datetime()[2]\n"; 
   else if (dropdown_data == "TẤT CẢ")
-    code = "''.join([str(x) for x in [ds1307.datetime()[2], '/', ds1307.datetime()[1], '/', ds1307.datetime()[0], ' ', ds1307.datetime()[4], ':', ds1307.datetime()[5], ':', ds1307.datetime()[6]]])";
+    code = "ds1307.datetime()\n";
   else if (dropdown_data == "GIỜ")
     code =  "ds1307.datetime()[4]\n";
   else if (dropdown_data == "PHÚT")
