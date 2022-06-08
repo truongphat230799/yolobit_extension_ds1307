@@ -75,7 +75,7 @@ Blockly.Python["ds1307_settime"] = function (block) {
   var second = Blockly.Python.valueToCode(block, 'SECOND', Blockly.Python.ORDER_ATOMIC);
   
     // TODO: Assemble Python into code variable.
-  var code = "now = (" + year + "," + month + "," + date + "," + " " + "," + hour + "," + minute + "," + second +")\n" + "ds1307.datetime(now)\n";
+  var code = "now = (" + year + "," + month + "," + date + "," + "0" + "," + hour + "," + minute + "," + second +")\n" + "ds1307.datetime(now)\n";
   return code;
 };
 
