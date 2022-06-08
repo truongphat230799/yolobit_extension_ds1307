@@ -82,7 +82,7 @@ Blockly.Python["ds1307_settime"] = function (block) {
 Blockly.Blocks["ds1307_gettime"] = {
   init: function() {
     this.jsonInit({
-      message0: " đọc giá trị %1 tử RTC",
+      message0: " đọc giá trị %1 từ RTC",
       args0: [
         {
           type: "field_dropdown",
