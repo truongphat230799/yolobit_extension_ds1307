@@ -78,9 +78,6 @@ Blockly.Blocks["ds1307_settime"] = {
           min: 0,
           max: 60
         },
-        {
-          type: "input_dummy"
-        },
       ],
       previousStatement: null,
       nextStatement: null,
