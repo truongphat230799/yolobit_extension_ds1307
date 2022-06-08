@@ -4,7 +4,7 @@ Blockly.Blocks["ds1307_settime"] = {
     this.jsonInit({
       colour: "#006600",
       tooltip: "",
-      message0: "cài đặt giá trị năm %1 %2 tháng %3 %4 ngày %5 %6 giờ %9 %10 phút %11 %12 giây %13 %14",
+      message0: "cài đặt giá trị năm %1 %2 tháng %3 %4 ngày %5 %6 giờ %7 %8 phút %9 %10 giây %11 %12",
       args0: [
         { type: "input_dummy" },
         {
@@ -118,7 +118,7 @@ Blockly.Python["ds1307_gettime"] = function(block) {
   else if (dropdown_data == "NGÀY")
     code = "ds1307.datetime()[2]\n"; 
   else if (dropdown_data == "TẤT CẢ")
-    code = "ds1307.datetime()\n";
+    code = "''.join([str(x) for x in [ds1307.datetime()[2], '/', ds1307.datetime()[1], '/', ds1307.datetime()[0], ' ', ds1307.datetime()[4], ':', ds1307.datetime()[5], ':', ds1307.datetime()[6]]])";
   else if (dropdown_data == "GIỜ")
     code =  "ds1307.datetime()[4]\n";
   else if (dropdown_data == "PHÚT")
