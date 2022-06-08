@@ -37,7 +37,6 @@
         </shadow>
       </value>
     </block>
-    <block type="ds1307_showtime"/>
     <block type="ds1307_gettime"/>
   </category>
 </xml>
