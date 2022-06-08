@@ -4,7 +4,7 @@ Blockly.Blocks["ds1307_showtime"] = {
       message0: "lấy giá trị thời gian từ cảm biến",
       args0: [
       ],
-      colour: "#CFF600",
+      colour: "#CFF6F0",
       output: null
     });
   }
@@ -23,7 +23,7 @@ Blockly.Python["ds1307_showtime"] = function(block) {
 Blockly.Blocks["ds1307_settime"] = {
   init: function () {
     this.jsonInit({
-      colour: "#CFF600",
+      colour: "#CFF6F0",
       tooltip: "",
       message0: "cài đặt giá trị năm %1 tháng %2 ngày %3 thứ %4 giờ %5 phút %6 giây %7 %8",
       args0: [
@@ -122,7 +122,7 @@ Blockly.Blocks["ds1307_gettime"] = {
         }
       ],
       output: null,
-      colour: "#CFF600"
+      colour: "#CFF6F0"
     });
   }
 };
