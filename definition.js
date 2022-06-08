@@ -25,7 +25,7 @@ Blockly.Blocks["ds1307_settime"] = {
     this.jsonInit({
       colour: "#006600",
       tooltip: "",
-      message0: "cài đặt giá trị năm %1 %2 tháng %3 %4 ngày %5 %6 thứ %7 %8 giờ %9 %10 phút %11 %12 giây %7 %8",
+      message0: "cài đặt giá trị năm %1 %2 tháng %3 %4 ngày %5 %6 thứ %7 %8 giờ %9 %10 phút %11 %12 giây %13 %14",
       args0: [
         { type: "input_dummy" },
         {
