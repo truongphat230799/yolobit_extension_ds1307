@@ -25,13 +25,15 @@ Blockly.Blocks["ds1307_settime"] = {
     this.jsonInit({
       colour: "#006600",
       tooltip: "",
-      message0: "cài đặt giá trị năm %1 tháng %2 ngày %3 thứ %4 giờ %5 phút %6 giây %7 %8",
+      message0: "cài đặt giá trị năm %1 %2 tháng %3 %4 ngày %5 %6 thứ %7 %8 giờ %9 %10 phút %11 %12 giây %7 %8",
       args0: [
+        { type: "input_dummy" },
         {
           type: "input_value",
           name: "YEAR",
           check: "Number"
         },
+        { type: "input_dummy" },
         {
           type: "input_value",
           name: "MONTH",
@@ -39,6 +41,7 @@ Blockly.Blocks["ds1307_settime"] = {
           min: 0,
           max: 12
         },
+        { type: "input_dummy" },
         {
           type: "input_value",
           name: "DATE",
@@ -46,10 +49,12 @@ Blockly.Blocks["ds1307_settime"] = {
           min: 0,
           max: 31
         },
+        { type: "input_dummy" },
         {
           type: "input_value",
           name: "WEEKDAY"
         },
+        { type: "input_dummy" },
         {
           type: "input_value",
           name: "HOUR",
@@ -57,6 +62,7 @@ Blockly.Blocks["ds1307_settime"] = {
           min: 0,
           max: 24
         },
+        { type: "input_dummy" },
         {
           type: "input_value",
           name: "MINUTE",
@@ -64,6 +70,7 @@ Blockly.Blocks["ds1307_settime"] = {
           min: 0,
           max: 60
         },
+        { type: "input_dummy" },
         {
           type: "input_value",
           name: "SECOND",
