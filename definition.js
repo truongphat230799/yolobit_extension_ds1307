@@ -1,31 +1,10 @@
-Blockly.Blocks["ds1307_showtime"] = {
-  init: function() {
-    this.jsonInit({
-      message0: "lấy giá trị thời gian từ cảm biến",
-      args0: [
-      ],
-      colour: "#006600",
-      output: null
-    });
-  }
-};
-
-Blockly.Python["ds1307_showtime"] = function(block) {
-  // TODO: Assemble Python into code variable.
-  Blockly.Python.definitions_['import_i2c'] = 'from machine import Pin, SoftI2C';
-  Blockly.Python.definitions_["import_ds1307"] = "from ds1307 import DS1307";
-  Blockly.Python.definitions_["import_create_ds1307"] = "ds1307 = DS1307(SoftI2C(scl=Pin(22), sda=Pin(21)))";
-  var code = "ds1307.datetime()\n";
-  return [code, Blockly.Python.ORDER_NONE];
-};
-
 
 Blockly.Blocks["ds1307_settime"] = {
   init: function () {
     this.jsonInit({
       colour: "#006600",
       tooltip: "",
-      message0: "cài đặt giá trị năm %1 %2 tháng %3 %4 ngày %5 %6 thứ %7 %8 giờ %9 %10 phút %11 %12 giây %13 %14",
+      message0: "cài đặt giá trị năm %1 %2 tháng %3 %4 ngày %5 %6 giờ %9 %10 phút %11 %12 giây %13 %14",
       args0: [
         { type: "input_dummy" },
         {
@@ -48,11 +27,6 @@ Blockly.Blocks["ds1307_settime"] = {
           check: "Number",
           min: 0,
           max: 31
-        },
-        { type: "input_dummy" },
-        {
-          type: "input_value",
-          name: "WEEKDAY"
         },
         { type: "input_dummy" },
         {
@@ -102,7 +76,7 @@ Blockly.Python["ds1307_settime"] = function (block) {
   var second = Blockly.Python.valueToCode(block, 'SECOND', Blockly.Python.ORDER_ATOMIC);
   
     // TODO: Assemble Python into code variable.
-  var code = "now = (" + year + "," + month + "," + date + "," + weekday + "," + hour + "," + minute + "," + second +")\n" + "ds1307.datetime(now)\n";
+  var code = "now = (" + year + "," + month + "," + date + "," + "" + "," + hour + "," + minute + "," + second +")\n" + "ds1307.datetime(now)\n";
   return code;
 };
 
@@ -115,13 +89,13 @@ Blockly.Blocks["ds1307_gettime"] = {
           type: "field_dropdown",
           name: "DATA",
           options: [
-            ["year", "YEAR"],
-            ["month", "MONTH"],
-            ["date", "DATE"],
-            ["weekday", "WEEKDAY"],
-            ["hour", "HOUR"],
-            ["minute", "MINUTE"],
-            ["second", "SECOND"]
+            ["năm", "NĂM"],
+            ["tháng", "THÁNG"],
+            ["ngày", "NGÀY"],
+            ["giờ", "GIỜ"],
+            ["phút", "PHÚT"],
+            ["giây", "GIÂY"],
+            ["tất cả", "TẤT CẢ"]
           ]
         }
       ],
@@ -138,19 +112,19 @@ Blockly.Python["ds1307_gettime"] = function(block) {
   Blockly.Python.definitions_["import_ds1307"] = "from ds1307 import DS1307";
   Blockly.Python.definitions_["import_create_ds1307"] = "ds1307 = DS1307(SoftI2C(scl=Pin(22), sda=Pin(21)))";
   var code = "";
-  if (dropdown_data == "YEAR")
+  if (dropdown_data == "NĂM")
     code = "ds1307.datetime()[0]\n";
-  else if (dropdown_data == "MONTH")
+  else if (dropdown_data == "THÁNG")
     code = "ds1307.datetime()[1]\n";
-  else if (dropdown_data == "DATE")
+  else if (dropdown_data == "NGÀY")
     code = "ds1307.datetime()[2]\n"; 
-  else if (dropdown_data == "WEEKDAY")
-    code = "ds1307.datetime()[3]\n";
-  else if (dropdown_data == "HOUR")
+  else if (dropdown_data == "TẤT CẢ")
+    code = "ds1307.datetime()\n";
+  else if (dropdown_data == "GIỜ")
     code =  "ds1307.datetime()[4]\n";
-  else if (dropdown_data == "MINUTE")
+  else if (dropdown_data == "PHÚT")
     code = "ds1307.datetime()[5]\n";
-  else if (dropdown_data == "SECOND")
+  else if (dropdown_data == "GIÂY")
     code = "ds1307.datetime()[6]\n";
   // TODO: Change ORDER_NONE to the correct strength.
   return [code, Blockly.Python.ORDER_NONE];
