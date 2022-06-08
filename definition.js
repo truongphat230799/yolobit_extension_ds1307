@@ -94,7 +94,7 @@ Blockly.Blocks["ds1307_gettime"] = {
             ["giờ", "GIỜ"],
             ["phút", "PHÚT"],
             ["giây", "GIÂY"],
-            ["tất cả", "TẤT CẢ"]
+            ["đầy đủ", "ĐẦY ĐỦ"]
           ]
         }
       ],
@@ -117,7 +117,7 @@ Blockly.Python["ds1307_gettime"] = function(block) {
     code = "ds1307.datetime()[1]\n";
   else if (dropdown_data == "NGÀY")
     code = "ds1307.datetime()[2]\n"; 
-  else if (dropdown_data == "TẤT CẢ")
+  else if (dropdown_data == "ĐẦY ĐỦ")
     code = "''.join([str(x) for x in ['{0:0>2}'.format(ds1307.datetime()[2]), '/', '{0:0>2}'.format(ds1307.datetime()[1]), '/', '{0:0>2}'.format(ds1307.datetime()[0]), ' ', '{0:0>2}'.format(ds1307.datetime()[4]), ':', '{0:0>2}'.format(ds1307.datetime()[5]), ':', '{0:0>2}'.format(ds1307.datetime()[6])]])";
   else if (dropdown_data == "GIỜ")
     code =  "ds1307.datetime()[4]\n";
