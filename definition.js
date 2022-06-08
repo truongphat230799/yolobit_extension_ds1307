@@ -70,13 +70,12 @@ Blockly.Python["ds1307_settime"] = function (block) {
   var year = Blockly.Python.valueToCode(block, 'YEAR', Blockly.Python.ORDER_ATOMIC);
   var month = Blockly.Python.valueToCode(block, 'MONTH', Blockly.Python.ORDER_ATOMIC);
   var date = Blockly.Python.valueToCode(block, 'DATE', Blockly.Python.ORDER_ATOMIC);
-  var weekday = Blockly.Python.valueToCode(block, 'WEEKDAY', Blockly.Python.ORDER_ATOMIC);
   var hour = Blockly.Python.valueToCode(block, 'HOUR', Blockly.Python.ORDER_ATOMIC);
   var minute = Blockly.Python.valueToCode(block, 'MINUTE', Blockly.Python.ORDER_ATOMIC);
   var second = Blockly.Python.valueToCode(block, 'SECOND', Blockly.Python.ORDER_ATOMIC);
   
     // TODO: Assemble Python into code variable.
-  var code = "now = (" + year + "," + month + "," + date + "," + "" + "," + hour + "," + minute + "," + second +")\n" + "ds1307.datetime(now)\n";
+  var code = "now = (" + year + "," + month + "," + date + "," + " " + "," + hour + "," + minute + "," + second +")\n" + "ds1307.datetime(now)\n";
   return code;
 };
 
